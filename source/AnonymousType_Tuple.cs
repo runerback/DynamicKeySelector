@@ -8,6 +8,7 @@ namespace DynamicKeySelector
 	public class AnonymousType_Tuple<T1, T2, T3>
 	{
 		public AnonymousType_Tuple(T1 t1, T2 t2, T3 t3)
+		{
 			Item1_backstoreField = t1;
 			Item2_backstoreField = t2;
 			Item3_backstoreField = t3;
