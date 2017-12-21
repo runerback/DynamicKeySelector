@@ -10,6 +10,7 @@ namespace DynamicKeySelector
 	{
 		public static AnonymousType_Tuple<T1, T2, T3> Select<T1, T2, T3>(T1 t1, T2 t2, T3 t3)
 		{
+			//return new AnonymousType_Tuple<T1, T2, T3>(t1, t2, t3);
 			Type[] genericTypes = new Type[]{typeof(T1),typeof(T2),typeof(T3)};
 			Type anoType = typeof(AnonymousType_Tuple<,,>).MakeGenericType(genericTypes);
 			var ctor = anoType.GetConstructor(genericTypes);

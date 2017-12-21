@@ -46,6 +46,8 @@
     <Compile Include="AnonymousType_Tuple.cs" />
     <Compile Include="AnonymousTypeSelector.cs" />
     <Compile Include="CodeTimeChecker.cs" />
+    <Compile Include="DynamicEnumerableExtension.cs" />
+    <Compile Include="DynamicGroupKey.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
