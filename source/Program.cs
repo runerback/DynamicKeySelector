@@ -72,7 +72,7 @@ namespace DynamicKeySelector
 			Console.WriteLine("----------------------");
 
 			var result3 = source
-				.Select(item => AnonymousTypeSelector.Select(item.Item1, item.Item3, item.Item5));
+				.Select(item => AnonymousTypeSelector.Create(item.Item1, item.Item3, item.Item5));
 
 			checker.Set();
 			foreach (var item in result3)
@@ -84,7 +84,11 @@ namespace DynamicKeySelector
 
 		private static void GroupBy(Model[] source)
 		{
+			CodeTimeChecker checker = new CodeTimeChecker();
+
+			checker.Set();
 			var group1 = source.GroupBy(item => item.Item6);
+			checker.Check();
 			foreach (var group in group1)
 			{
 				Console.Write("{0}, ", group.Key);
@@ -93,8 +97,9 @@ namespace DynamicKeySelector
 
 			Console.WriteLine("----------------------");
 
-			///TODO: different results here
+			checker.Set();
 			var group2 = source.GroupBy(new string[] { "Item6" });
+			checker.Check();
 			foreach (var group in group2)
 			{
 				Console.Write("{0}, ", group.Key["Item6"]);
